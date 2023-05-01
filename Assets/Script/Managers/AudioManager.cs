@@ -13,6 +13,7 @@ namespace Script.Managers
         [SerializeField] private AudioClip throwClip;
         [SerializeField] private AudioClip eggLandClip;
         [SerializeField] private AudioClip crackClip;
+        [SerializeField] private AudioClip finishLevelClip;
         private static AudioManager currentManager;
         
         public static AudioClip FlapClip => AM.flapClip;
@@ -21,6 +22,7 @@ namespace Script.Managers
         public static AudioClip ThrowClip => AM.throwClip;
         public static AudioClip EggLandClip => AM.eggLandClip;
         public static AudioClip CrackClip => AM.crackClip;
+        public static AudioClip FinishLevelClip => AM.finishLevelClip;
         private void Awake()
         {
             AudioSource[] sources = GetComponentsInChildren<AudioSource>();

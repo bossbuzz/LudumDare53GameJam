@@ -39,7 +39,8 @@ namespace Script.Player_.StateMachineP
         
         protected void GravityMovement(Player player)
         {
-            float gravValue = player.gravity * TimeManager.DeltaTime;
+            int val = player.InputManager.DirectionalInput().y < 0 ? 2 : 1;
+            float gravValue = player.gravity * TimeManager.DeltaTime * val;
             player.VelocityY += gravValue;
         }
 

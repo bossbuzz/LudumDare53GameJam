@@ -127,6 +127,7 @@ MonoBehaviour:
   minJumpHeight: 3
   timeToJumpApex: 0.3
   minJumpVelocity: 0
+  maxJumpVelocity: 0
   topSpeed: {x: 30, y: 30}
   canDoubleJump: 0
   Animator: {fileID: 0}

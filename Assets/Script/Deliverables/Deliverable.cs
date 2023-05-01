@@ -28,6 +28,7 @@ namespace Script.Deliverables
         public float crackVelocity;
         [HideInInspector] public bool cantCrack;
         public SpriteRenderer Renderer;
+        public GameObject stars;
         public delegate void dvoid();
         public event dvoid onBounce;
         public event dvoid onDestory;
@@ -49,7 +50,7 @@ namespace Script.Deliverables
             get => velocity.y;
             set
             {
-                velocity.y = Mathf.Clamp(value,-useTopSpeed.y,useTopSpeed.y);
+                velocity.y = Mathf.Clamp(value,-topSpeed.y,useTopSpeed.y);
             }
         }
         
@@ -58,7 +59,7 @@ namespace Script.Deliverables
             get => velocity.x;
             set
             {
-                velocity.x = Mathf.Clamp(value,-topSpeed.x,topSpeed.x);
+                velocity.x = Mathf.Clamp(value,-useTopSpeed.x,useTopSpeed.x);
             }
         }
         
@@ -169,6 +170,8 @@ namespace Script.Deliverables
         private void DestroyDeliverable()
         {
             onDestory?.Invoke();
+            stars.transform.parent = null;
+            stars.SetActive(true);
             Destroy(gameObject);
         }
         

@@ -49319,6 +49319,18 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 3012293766979952673, guid: 4961f507d838ba849a3687aa9c20aed0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3012293766979952673, guid: 4961f507d838ba849a3687aa9c20aed0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3012293766979952673, guid: 4961f507d838ba849a3687aa9c20aed0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3012293767717463358, guid: 4961f507d838ba849a3687aa9c20aed0, type: 3}
       propertyPath: m_RootOrder
       value: 0

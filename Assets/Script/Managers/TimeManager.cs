@@ -13,6 +13,8 @@ namespace Script.Managers
         [SerializeField] private TextMeshProUGUI _textMinutes;
         [SerializeField] private TextMeshProUGUI _textSeconds;
         [SerializeField] private GameObject parentText;
+        private int minutes;
+        private int seconds;
         private float time;
         private void Awake()
         {
@@ -23,12 +25,27 @@ namespace Script.Managers
             else Destroy(this);
         }
 
-        public static string Minutes
+        public static int Minutes
+        {
+            get => TM.minutes;
+        }
+        
+        public static int Seconds
+        {
+            get => TM.seconds;
+        }
+
+        public static int GetTotalSeconds
+        {
+            get => TM.seconds + (TM.minutes * 60);
+        }
+        
+        public static string MinutesText
         {
             get => TM._textMinutes.text;
         }
         
-        public static string Seconds
+        public static string SecondsText
         {
             get => TM._textSeconds.text;
         }
@@ -64,8 +81,8 @@ namespace Script.Managers
         private void Update()
         {
             time += DeltaTime;
-            int minutes = (int) time / 60;
-            int seconds = (int) time % 60;
+            minutes = (int) time / 60;
+            seconds = (int) time % 60;
             _textMinutes.SetText(minutes.ToString("00"));
             _textSeconds.SetText(seconds.ToString("00"));
         }

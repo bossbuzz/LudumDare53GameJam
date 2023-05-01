@@ -2,6 +2,8 @@
 using Script.Player_;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 namespace Script.Managers
 {
@@ -13,12 +15,24 @@ namespace Script.Managers
         [SerializeField] private TextMeshProUGUI _minutes;
         [SerializeField] private TextMeshProUGUI _seconds;
         private InputManager _inputManager = new InputManager(true);
+        public Sprite emptyStar;
+        public Sprite fullStar;
+        public Image[] stars;
+        public TextMeshProUGUI[] _timesArray;
+
         private void Start()
         {
-            _minutes.text = TimeManager.Minutes;
-            _seconds.text = TimeManager.Seconds;
+            _minutes.text = TimeManager.MinutesText;
+            _seconds.text = TimeManager.SecondsText;
         }
 
+        public void SetValues(LevelManager.minutesSeconds[] array)
+        {
+            int stars = 0;
+            int playerSeconds = TimeManager.GetTotalSeconds;
+            if (playerSeconds < array[2].getSeconds()) ;
+        }
+        
         private void Update()
         {
             _onGoingTime += Time.deltaTime;

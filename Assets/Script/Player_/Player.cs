@@ -29,6 +29,7 @@ namespace Script.Player_
         public readonly RunningState RunningState = new RunningState();
         public readonly DoubleJumpState DoubleJumpState = new DoubleJumpState();
         public readonly BounceStateP BounceStateP = new BounceStateP();
+        public readonly CelebStateP CelebStateP = new CelebStateP();
         
         public int Id => 0;
         

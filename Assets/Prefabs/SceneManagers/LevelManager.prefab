@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _victoryScreen: {fileID: 3012293766979952674}
+  times: []
 --- !u!1001 &4973319691963772414
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -56,6 +57,10 @@ PrefabInstance:
     - target: {fileID: 7838821710534151644, guid: a1cac613358f2d845acf26dd8bba1881, type: 3}
       propertyPath: m_Name
       value: VictoryObject
+      objectReference: {fileID: 0}
+    - target: {fileID: 7838821710534151644, guid: a1cac613358f2d845acf26dd8bba1881, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7838821710534151646, guid: a1cac613358f2d845acf26dd8bba1881, type: 3}
       propertyPath: m_Camera
@@ -115,15 +120,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7838821710534151647, guid: a1cac613358f2d845acf26dd8bba1881, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7838821710534151647, guid: a1cac613358f2d845acf26dd8bba1881, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7838821710534151647, guid: a1cac613358f2d845acf26dd8bba1881, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7838821710534151647, guid: a1cac613358f2d845acf26dd8bba1881, type: 3}
       propertyPath: m_AnchoredPosition.x

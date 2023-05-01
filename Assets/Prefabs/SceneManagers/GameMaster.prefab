@@ -195,6 +195,10 @@ PrefabInstance:
       propertyPath: crackClip
       value: 
       objectReference: {fileID: 8300000, guid: f64eb3b79a6782043869603983c6f09d, type: 3}
+    - target: {fileID: 3926958126860005254, guid: 514f4a394eb896241ac14f8d5c003a1f, type: 3}
+      propertyPath: finishLevelClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 0fd97a0745cff4feda4e1927ec44244a, type: 3}
     - target: {fileID: 3926958126860005255, guid: 514f4a394eb896241ac14f8d5c003a1f, type: 3}
       propertyPath: m_RootOrder
       value: 2
