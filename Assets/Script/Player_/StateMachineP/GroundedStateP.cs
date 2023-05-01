@@ -2,6 +2,7 @@
 {
     public class GroundedState : PlayerState
     {
+        public override int Id => 0;
         public override string Name => "GroundedState";
         
         public override void EnterState(Player player)

@@ -5,6 +5,7 @@
         public override string Name => "JumpState";
         public override void EnterState(Player player)
         {
+            player.Animator.SetTrigger("flap");
             player.VelocityY = player.minJumpVelocity;
         }
         

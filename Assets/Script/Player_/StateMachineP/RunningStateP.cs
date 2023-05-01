@@ -2,6 +2,7 @@
 {
     public class RunningState : GroundedState
     {
+        public override int Id => 1;
         public override string Name => "RunningState";
 
         protected override void Transitions(Player player)

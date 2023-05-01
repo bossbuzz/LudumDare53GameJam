@@ -2,6 +2,7 @@
 {
     public class AirborneState : PlayerState
     {
+        public override int Id => 2;
         public override string Name => "AirborneState";
 
         public override void EnterState(Player player)

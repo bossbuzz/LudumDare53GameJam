@@ -6,6 +6,11 @@ namespace Script.Player_.StateMachineP
 {
     public abstract class PlayerState
     {
+        public abstract int Id
+        {
+            get;
+        }
+        
         public abstract string Name
         {
             get;
@@ -63,6 +68,7 @@ namespace Script.Player_.StateMachineP
         {
             if (player.InputManager.PressedThrow())
             {
+                player.Animator.SetTrigger("throw");
                 player.GrabModule.Throw(player.InputManager.DirectionalInput());
             }
         }

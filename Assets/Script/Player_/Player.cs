@@ -23,6 +23,7 @@ namespace Script.Player_
         public bool hasInfiniteDoubleJumps;
         private int doubleJumps;
         public PlayerState CurrentState;
+        [HideInInspector] public Animator Animator; 
         public readonly AirborneState FallingState = new AirborneState();
         public readonly JumpState JumpState = new JumpState();
         public readonly GroundedState GroundedState = new GroundedState();
@@ -73,6 +74,7 @@ namespace Script.Player_
         private void Awake()
         {
             doubleJumps = maxDoubleJumps;
+            Animator = GetComponent<Animator>();
             controller2D = GetComponent<Controller2D>();
             StompModule = GetComponentInChildren<StompModule>();
             SetState(FallingState);
@@ -86,6 +88,7 @@ namespace Script.Player_
             CurrentState = newState;
             DebugUI.DisplayState(CurrentState);
             CurrentState?.EnterState(this);
+            Animator.SetInteger("Id",CurrentState.Id);
         }
         
         private void Update()
