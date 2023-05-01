@@ -360,8 +360,8 @@ MonoBehaviour:
   localWaypoints:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 5, z: 0}
-  speed: 3
+  speed: 5
   cyclic: 1
-  waitTime: 1
+  waitTime: 0.5
   easeAmount: 0.5
   passengerDetectionRange: 0
