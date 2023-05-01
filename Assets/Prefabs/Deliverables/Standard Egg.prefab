@@ -100,8 +100,8 @@ MonoBehaviour:
   Collider2D: {fileID: 0}
   velocity: {x: 0, y: 0}
   topSpeed: {x: 35, y: 35}
-  throwForce: {x: 25, y: 20}
-  throwDecay: {x: 25, y: 10}
+  throwForce: {x: 30, y: 20}
+  throwDecay: {x: 45, y: 10}
   bounceDecay: {x: 3, y: 3}
   useTopSpeed: {x: 0, y: 0}
   spawnOnGround: 1
