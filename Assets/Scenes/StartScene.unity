@@ -180,7 +180,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8907899352491161910, guid: a8423d5b87ca00c45994798165961428, type: 3}
       propertyPath: dontLoadFromList
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8907899352491161910, guid: a8423d5b87ca00c45994798165961428, type: 3}
+      propertyPath: Scenes.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8907899352491161910, guid: a8423d5b87ca00c45994798165961428, type: 3}
+      propertyPath: Scenes.Array.data[6]
+      value: 
+      objectReference: {fileID: 102900000, guid: 17caee9d2235647c0b2ff4df2ec1bf7c, type: 3}
+    - target: {fileID: 8907899352491161910, guid: a8423d5b87ca00c45994798165961428, type: 3}
+      propertyPath: Scenes.Array.data[7]
+      value: 
+      objectReference: {fileID: 102900000, guid: 0dd998240b23e49ad97390db5b8edcad, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8423d5b87ca00c45994798165961428, type: 3}
