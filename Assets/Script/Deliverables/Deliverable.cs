@@ -15,13 +15,19 @@ namespace Script.Deliverables
         public Vector2 throwForce;
         public Vector2 throwDecay;
         public Vector2 bounceDecay = Vector2.one;
+        public Vector2 useTopSpeed;
         private DeliverableState _currentState;
         public readonly GroundedStateD IdleState = new GroundedStateD();
         public readonly PickupStateD PickupStateD = new PickupStateD();
         public readonly ThrowingStateD ThrowingStateD = new ThrowingStateD();
         public bool spawnOnGround = false;
+        public int health;
+        public int crackDamage;
+        public float crackVelocity;
+        [HideInInspector] public bool cantCrack;
         public delegate void dvoid();
         public event dvoid onBounce;
+        public event dvoid onDestory;
 
         public int Id => _id;
 
@@ -30,8 +36,8 @@ namespace Script.Deliverables
             get => velocity;
             set
             {
-                velocity.x = Mathf.Clamp(value.x,-topSpeed.x,topSpeed.x);
-                velocity.y = Mathf.Clamp(value.y,-topSpeed.y,topSpeed.y);
+                velocity.x = Mathf.Clamp(value.x,-useTopSpeed.x,useTopSpeed.x);
+                velocity.y = Mathf.Clamp(value.y,-useTopSpeed.y,useTopSpeed.y);
             }
         }
         
@@ -40,7 +46,7 @@ namespace Script.Deliverables
             get => velocity.y;
             set
             {
-                velocity.y = Mathf.Clamp(value,-topSpeed.y,topSpeed.y);
+                velocity.y = Mathf.Clamp(value,-useTopSpeed.y,useTopSpeed.y);
             }
         }
         
@@ -61,11 +67,12 @@ namespace Script.Deliverables
 
         private void Start()
         {
+            useTopSpeed = topSpeed;
             if (spawnOnGround)
             {
+                Controller2D.Move(Vector2.down,false);
                 _currentState = IdleState;
                 velocity = Vector2.zero;
-                Controller2D.Move(Vector2.down,false);
             }
             else _currentState = ThrowingStateD;
         }
@@ -77,6 +84,11 @@ namespace Script.Deliverables
 
         public void InvokeBounce()
         {
+            if (CheckDamage())
+            {
+                Damage();
+            }
+            else AudioManager.PlayClip(AudioManager.EggLandClip, 0.25f,0.6f);
             onBounce?.Invoke();
         }
         
@@ -133,5 +145,25 @@ namespace Script.Deliverables
             AudioManager.PlayClip(AudioManager.BounceClip);
             VelocityY = -Mathf.Abs(VelocityY);
         }
+
+        public bool CheckDamage()
+        {
+            return (Mathf.Abs(VelocityY) >= crackVelocity || Mathf.Abs(VelocityX) >= crackVelocity) && crackDamage > 0 && !cantCrack;
+        }
+
+        private void Damage()
+        {
+            cantCrack = true;
+            AudioManager.PlayClip(AudioManager.CrackClip);
+            health -= crackDamage;
+            if(health <= 0) DestroyDeliverable();
+        }
+
+        private void DestroyDeliverable()
+        {
+            onDestory?.Invoke();
+            Destroy(gameObject);
+        }
+        
     }
 }

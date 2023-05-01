@@ -13369,7 +13369,7 @@ Transform:
   - {fileID: 185886716}
   - {fileID: 885130842}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &885130841
 GameObject:
@@ -13429,9 +13429,9 @@ PolygonCollider2D:
   m_Points:
     m_Paths:
     - - {x: -30, y: 18}
-      - {x: -30, y: -18}
-      - {x: 30, y: -18}
-      - {x: 30, y: 18}
+      - {x: -30, y: -25}
+      - {x: 110, y: -25}
+      - {x: 110, y: 18}
 --- !u!1001 &984370126
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14894,7 +14894,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2689365488109669662, guid: 35f6017ff6f862740bcc9380761c0389, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.827381
+      value: 14.766667
       objectReference: {fileID: 0}
     - target: {fileID: 2689365488109669662, guid: 35f6017ff6f862740bcc9380761c0389, type: 3}
       propertyPath: m_LocalPosition.y

@@ -1,5 +1,6 @@
 ﻿using System;
 using Script.Deliverables;
+using Script.Managers;
 using UnityEngine;
 
 namespace Script.Player_
@@ -43,6 +44,7 @@ namespace Script.Player_
             }
             if (!player.controller2D.IsGrounded) player.canDoubleJump = false;
             player.Animator.SetTrigger("throw");
+            AudioManager.PlayClip(AudioManager.ThrowClip,1,2);
             player.StompModule.RegisterThrownItem(_carriedObject,throwStompTimer);
             _carriedObject.Throw(direction,player.transform);
             _carriedObject = null;

@@ -50,7 +50,7 @@ namespace Script.Player_
                     Deliverable deliverable =results[0].GetComponent<Deliverable>();
                     if (pair is null || deliverable != pair.Deliverable)
                     {
-                        player.SetState(player.JumpState);
+                        player.SetState(player.BounceStateP);
                         if (!player.GrabModule.IsCarryingObject) player.canDoubleJump = true;
                         deliverable.Stomp();
                     }

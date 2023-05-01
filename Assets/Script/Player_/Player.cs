@@ -18,6 +18,7 @@ namespace Script.Player_
         [SerializeField] public float minJumpHeight;
         [SerializeField] public float timeToJumpApex;
         [HideInInspector] public float minJumpVelocity;
+        public float maxJumpVelocity;
         [SerializeField] public Vector2 topSpeed;
         public bool canDoubleJump;
         public PlayerState CurrentState;
@@ -27,6 +28,7 @@ namespace Script.Player_
         public readonly GroundedState GroundedState = new GroundedState();
         public readonly RunningState RunningState = new RunningState();
         public readonly DoubleJumpState DoubleJumpState = new DoubleJumpState();
+        public readonly BounceStateP BounceStateP = new BounceStateP();
         
         public int Id => 0;
         
@@ -72,7 +74,8 @@ namespace Script.Player_
             StompModule = GetComponentInChildren<StompModule>();
             SetState(FallingState);
             gravity = -(2 * maxJumpHeight) / Mathf.Pow (timeToJumpApex, 2);
-            minJumpVelocity = Mathf.Sqrt (2 * Mathf.Abs (gravity) * minJumpHeight);
+            minJumpVelocity = Mathf.Sqrt(2 * Mathf.Abs(gravity) * minJumpHeight);
+            maxJumpVelocity = Mathf.Sqrt(2 * Mathf.Abs(gravity) * maxJumpHeight);
         }
 
         public void SetState(PlayerState newState)

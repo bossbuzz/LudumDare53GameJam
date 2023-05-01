@@ -16,7 +16,10 @@
 
         private void Transitions(Deliverable deliverable)
         {
-            if(!deliverable.Controller2D.IsGrounded)deliverable.SetState(deliverable.ThrowingStateD);
+            if (!deliverable.Controller2D.IsGrounded)
+            {
+                deliverable.SetState(deliverable.ThrowingStateD);
+            }
         }
         
         public override void ExitState(Deliverable deliverable)

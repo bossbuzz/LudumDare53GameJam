@@ -18,6 +18,7 @@ namespace Script.Deliverables.StateMachineD
         
         public override void EnterState(Deliverable deliverable)
         {
+            deliverable.useTopSpeed = deliverable.topSpeed;
             Vector2 vel = force * direction;
             if (vel.y == 0) vel.y = 1;
             deliverable.VelocityY = vel.y;
@@ -28,8 +29,8 @@ namespace Script.Deliverables.StateMachineD
         public override void Update(Deliverable deliverable)
         {
             ForceDecay(deliverable);
-            GravityDecay(deliverable,3);
             VerticalBounce(deliverable);
+            GravityDecay(deliverable,3);
             DoMovement(deliverable);
             Transitions(deliverable);
         }
@@ -55,6 +56,11 @@ namespace Script.Deliverables.StateMachineD
         
         private void VerticalBounce(Deliverable deliverable)
         {
+            if (deliverable.useTopSpeed.y <= 0.2f)
+            {
+                deliverable.VelocityY = 0;
+                return;
+            }
             if (deliverable.Controller2D.collisions.above)
             {
                 deliverable.InvokeBounce();
@@ -63,15 +69,22 @@ namespace Script.Deliverables.StateMachineD
             if (deliverable.Controller2D.collisions.below)
             {
                 deliverable.InvokeBounce();
-                deliverable.VelocityY /= deliverable.bounceDecay.y;
+                if (deliverable.bounceDecay.y != 1)
+                {
+                    deliverable.VelocityY /= deliverable.bounceDecay.y;
+                }
                 deliverable.VelocityY = -deliverable.VelocityY;
+                deliverable.useTopSpeed.y = Mathf.Abs(deliverable.VelocityY);
             }
         }
 
         private void Transitions(Deliverable deliverable)
         {
-            if (deliverable.Velocity == Vector2.zero)
+            if (deliverable.Controller2D.IsGrounded && Mathf.Abs(deliverable.VelocityY) <= 2f && Mathf.Abs(deliverable.VelocityX) <= 2f)
             {
+                UnityEngine.Debug.Log("Landed");
+                deliverable.velocity = Vector2.zero;
+                deliverable.Controller2D.Move(Vector2.down,false);
                 deliverable.SetState(deliverable.IdleState);
             }
         }
@@ -81,6 +94,8 @@ namespace Script.Deliverables.StateMachineD
             direction = Vector2.zero;
             velocity = 0;
             directionSignX = 0;
+            deliverable.useTopSpeed = deliverable.topSpeed;
+            deliverable.cantCrack = false;
         }
     }
 }

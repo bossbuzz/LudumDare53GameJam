@@ -48,9 +48,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Scenes:
-  - {fileID: 102900000, guid: d76c81727efbbb44cbb008ccbbf3de98, type: 3}
-  - {fileID: 102900000, guid: 2cda990e2423bbf4892e6590ba056729, type: 3}
-  dontLoadFromList: 0
+  - {fileID: 102900000, guid: e65c510e2d3b51d43b19e6c7006e11e5, type: 3}
+  - {fileID: 102900000, guid: 5992ce7d11f6f15448cc7041c03cf81d, type: 3}
+  - {fileID: 102900000, guid: dc88f69fae96b894290d538bbdfe554c, type: 3}
+  - {fileID: 102900000, guid: 8dd1ccc22edbee841b00e58aa7509ab9, type: 3}
+  - {fileID: 102900000, guid: 815447d8c757a154194daaf8b9c3fb96, type: 3}
+  - {fileID: 102900000, guid: a7f2a754982427947b3aa2efbf0114e9, type: 3}
+  dontLoadFromList: 1
 --- !u!1001 &58073663992297474
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -187,6 +191,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8907899352491161905}
     m_Modifications:
+    - target: {fileID: 3926958126860005254, guid: 514f4a394eb896241ac14f8d5c003a1f, type: 3}
+      propertyPath: crackClip
+      value: 
+      objectReference: {fileID: 8300000, guid: f64eb3b79a6782043869603983c6f09d, type: 3}
     - target: {fileID: 3926958126860005255, guid: 514f4a394eb896241ac14f8d5c003a1f, type: 3}
       propertyPath: m_RootOrder
       value: 2

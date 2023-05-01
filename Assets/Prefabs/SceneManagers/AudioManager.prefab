@@ -1243,3 +1243,5 @@ MonoBehaviour:
   flapClip: {fileID: 8300000, guid: e3f505f4f70afe945a53d0095839ba1c, type: 3}
   landClip: {fileID: 8300000, guid: cad5034b43d2e154ead6a1070921325c, type: 3}
   bounceClip: {fileID: 8300000, guid: bfc12c7107cdae240bb655e5c828c372, type: 3}
+  throwClip: {fileID: 8300000, guid: 42ff125b90b6c154bb88e7b06aa143ce, type: 3}
+  eggLandClip: {fileID: 8300000, guid: 82a2520ef36042f479630b1e7475c51d, type: 3}

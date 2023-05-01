@@ -10,11 +10,17 @@ namespace Script.Managers
         [SerializeField] private AudioClip flapClip;
         [SerializeField] private AudioClip landClip;
         [SerializeField] private AudioClip bounceClip;
+        [SerializeField] private AudioClip throwClip;
+        [SerializeField] private AudioClip eggLandClip;
+        [SerializeField] private AudioClip crackClip;
         private static AudioManager currentManager;
         
         public static AudioClip FlapClip => AM.flapClip;
         public static AudioClip LandClip => AM.landClip;
         public static AudioClip BounceClip => AM.bounceClip;
+        public static AudioClip ThrowClip => AM.throwClip;
+        public static AudioClip EggLandClip => AM.eggLandClip;
+        public static AudioClip CrackClip => AM.crackClip;
         private void Awake()
         {
             AudioSource[] sources = GetComponentsInChildren<AudioSource>();
@@ -43,16 +49,18 @@ namespace Script.Managers
             currentManager = null;
         }
 
-        public static void PlayClip(AudioClip clip)
+        public static void PlayClip(AudioClip clip, float volume = 1, float pitch = 1)
         {
-            AM.PlayAudioClip(clip);
+            AM.PlayAudioClip(clip,volume,pitch);
         }
 
-        private void PlayAudioClip(AudioClip clip)
+        private void PlayAudioClip(AudioClip clip,float volume = 1,float pitch = 1)
         {
             AudioSource nextSource = _audioSources.Dequeue();
             _audioSources.Enqueue(nextSource);
             nextSource.clip = clip;
+            nextSource.volume = volume;
+            nextSource.pitch = pitch;
             nextSource.Play();
         }
         
