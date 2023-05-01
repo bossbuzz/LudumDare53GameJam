@@ -28,9 +28,19 @@ namespace Script.Managers
 
         public void SetValues(LevelManager.minutesSeconds[] array)
         {
-            int stars = 0;
+            int starss = 0;
+            int index = 0;
             int playerSeconds = TimeManager.GetTotalSeconds;
-            if (playerSeconds < array[2].getSeconds()) ;
+            foreach (var ms in array)
+            {
+                if (ms.getSeconds() > playerSeconds) starss++;
+                _timesArray[index].text = ms.minutes.ToString("00") + ":" + ms.seconds.ToString("00");
+                index++;
+            }
+            for (int i = 0; i < starss; i++)
+            {
+                stars[i].sprite = fullStar;
+            }
         }
         
         private void Update()

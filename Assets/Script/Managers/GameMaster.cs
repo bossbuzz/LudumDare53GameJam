@@ -53,6 +53,7 @@ namespace Script.Managers
             Scene CurrentScene = SceneManager.GetActiveScene();
             SceneManager.UnloadSceneAsync(CurrentScene);
             SceneManager.LoadScene(CurrentScene.name);
+            TimeManager.TM.ResetTimer();
         }
         
         private void ManageScenes(Scene s, LoadSceneMode mode)

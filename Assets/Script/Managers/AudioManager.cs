@@ -7,6 +7,7 @@ namespace Script.Managers
     public class AudioManager : MonoBehaviour
     {
         private Queue<AudioSource> _audioSources;
+        private AudioSource _musicSource;
         [SerializeField] private AudioClip flapClip;
         [SerializeField] private AudioClip landClip;
         [SerializeField] private AudioClip bounceClip;
@@ -14,6 +15,8 @@ namespace Script.Managers
         [SerializeField] private AudioClip eggLandClip;
         [SerializeField] private AudioClip crackClip;
         [SerializeField] private AudioClip finishLevelClip;
+        [SerializeField] private AudioClip levelMusic;
+        [SerializeField] private AudioClip titleMusic;
         private static AudioManager currentManager;
         
         public static AudioClip FlapClip => AM.flapClip;
@@ -23,6 +26,9 @@ namespace Script.Managers
         public static AudioClip EggLandClip => AM.eggLandClip;
         public static AudioClip CrackClip => AM.crackClip;
         public static AudioClip FinishLevelClip => AM.finishLevelClip;
+        public static AudioClip LevelMusic => AM.levelMusic;
+        private static AudioClip TitleMusic => AM.titleMusic;
+        
         private void Awake()
         {
             AudioSource[] sources = GetComponentsInChildren<AudioSource>();

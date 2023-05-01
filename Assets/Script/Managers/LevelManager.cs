@@ -12,7 +12,7 @@ namespace Script.Managers
         private readonly List<Receptor> _receptors = new List<Receptor>();
         private InputManager _inputManager = new InputManager(true);
         [SerializeField] private GameObject _victoryScreen;
-        public minutesSeconds[] times;
+        public minutesSeconds[] times = new minutesSeconds[3];
         
         private void Start()
         {
@@ -36,6 +36,7 @@ namespace Script.Managers
             TimeManager.Pause(true);
             TimeManager.TM.ShowTimer(false);
             _victoryScreen.SetActive(true);
+            _victoryScreen.GetComponent<VictoryScreen>().SetValues(times);
             AudioManager.PlayClip(AudioManager.FinishLevelClip);
             Player player = FindObjectOfType<Player>();
             if(player) player.SetState(player.CelebStateP);
