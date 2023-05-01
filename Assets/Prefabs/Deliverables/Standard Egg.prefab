@@ -107,7 +107,7 @@ MonoBehaviour:
   bounceDecay: {x: 3, y: 3}
   useTopSpeed: {x: 0, y: 0}
   spawnOnGround: 1
-  health: 5
+  health: 3
   crackDamage: 1
   crackVelocity: 30
   cantCrack: 0
