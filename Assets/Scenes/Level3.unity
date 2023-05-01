@@ -7350,16 +7350,6 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 0
-      m_TileSpriteIndex: 12
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741826
-  - first: {x: -5, y: 4, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 0
       m_TileSpriteIndex: 16
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
@@ -7780,16 +7770,6 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 0
-      m_TileSpriteIndex: 14
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741826
-  - first: {x: -5, y: 5, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 0
       m_TileSpriteIndex: 10
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
@@ -8200,16 +8180,6 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 0
-      m_TileSpriteIndex: 14
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741826
-  - first: {x: -5, y: 6, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 0
       m_TileSpriteIndex: 10
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
@@ -8607,16 +8577,6 @@ Tilemap:
       dummyAlignment: 0
       m_AllTileFlags: 1073741826
   - first: {x: -6, y: 7, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 0
-      m_TileSpriteIndex: 4
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741826
-  - first: {x: -5, y: 7, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 0
@@ -11338,7 +11298,7 @@ Tilemap:
       m_AllTileFlags: 1073741826
   m_AnimatedTiles: {}
   m_TileAssetArray:
-  - m_RefCount: 952
+  - m_RefCount: 948
     m_Data: {fileID: 11400000, guid: c23933d43a8f1923e8e7e5d7ce1606fb, type: 2}
   - m_RefCount: 109
     m_Data: {fileID: 11400000, guid: c7bb4cc3244c961b98a6a676818250e2, type: 2}
@@ -11353,7 +11313,7 @@ Tilemap:
     m_Data: {fileID: 21300022, guid: 4870201d3e7f678cae66676cb6d32be3, type: 3}
   - m_RefCount: 25
     m_Data: {fileID: 21300046, guid: 4870201d3e7f678cae66676cb6d32be3, type: 3}
-  - m_RefCount: 69
+  - m_RefCount: 68
     m_Data: {fileID: 21300036, guid: 4870201d3e7f678cae66676cb6d32be3, type: 3}
   - m_RefCount: 13
     m_Data: {fileID: 21300048, guid: 4870201d3e7f678cae66676cb6d32be3, type: 3}
@@ -11369,11 +11329,11 @@ Tilemap:
     m_Data: {fileID: 21300062, guid: 4870201d3e7f678cae66676cb6d32be3, type: 3}
   - m_RefCount: 9
     m_Data: {fileID: 21300072, guid: 4870201d3e7f678cae66676cb6d32be3, type: 3}
-  - m_RefCount: 76
+  - m_RefCount: 75
     m_Data: {fileID: 21300040, guid: 4870201d3e7f678cae66676cb6d32be3, type: 3}
   - m_RefCount: 9
     m_Data: {fileID: 21300068, guid: 4870201d3e7f678cae66676cb6d32be3, type: 3}
-  - m_RefCount: 518
+  - m_RefCount: 516
     m_Data: {fileID: 21300038, guid: 4870201d3e7f678cae66676cb6d32be3, type: 3}
   - m_RefCount: 12
     m_Data: {fileID: 21300010, guid: 4870201d3e7f678cae66676cb6d32be3, type: 3}
@@ -11416,7 +11376,7 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: 21300114, guid: 4870201d3e7f678cae66676cb6d32be3, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 1079
+  - m_RefCount: 1075
     m_Data:
       e00: 1
       e01: 0
@@ -11435,7 +11395,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 1079
+  - m_RefCount: 1075
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -33119,7 +33079,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2689365488109669662, guid: 35f6017ff6f862740bcc9380761c0389, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.333333
+      value: -5.2726192
       objectReference: {fileID: 0}
     - target: {fileID: 2689365488109669662, guid: 35f6017ff6f862740bcc9380761c0389, type: 3}
       propertyPath: m_LocalPosition.y
