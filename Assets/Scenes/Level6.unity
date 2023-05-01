@@ -38672,6 +38672,22 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: 918050237
       objectReference: {fileID: 0}
+    - target: {fileID: 8186512843327452704, guid: f029dbce831c57848b4d3d03ed1cec6c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8186512843327452711, guid: f029dbce831c57848b4d3d03ed1cec6c, type: 3}
+      propertyPath: speed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8186512843327452711, guid: f029dbce831c57848b4d3d03ed1cec6c, type: 3}
+      propertyPath: waitTime
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8186512843327452711, guid: f029dbce831c57848b4d3d03ed1cec6c, type: 3}
+      propertyPath: localWaypoints.Array.data[1].y
+      value: -9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f029dbce831c57848b4d3d03ed1cec6c, type: 3}
 --- !u!1001 &870400266707784872
