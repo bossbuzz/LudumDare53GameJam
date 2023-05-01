@@ -28,6 +28,7 @@ namespace Script.Player_
             else
             {
                 _carriedObject.Drop(player.transform.position);
+                if (!player.controller2D.IsGrounded) player.canDoubleJump = false;
                 player.StompModule.RegisterThrownItem(_carriedObject,throwStompTimer);
                 _carriedObject = null;
             }
@@ -35,7 +36,13 @@ namespace Script.Player_
 
         public void Throw(Vector2 direction)
         {
-            if (_carriedObject is null) return;
+            if (_carriedObject is null)
+            {
+                Grab();
+                return;
+            }
+            if (!player.controller2D.IsGrounded) player.canDoubleJump = false;
+            player.Animator.SetTrigger("throw");
             player.StompModule.RegisterThrownItem(_carriedObject,throwStompTimer);
             _carriedObject.Throw(direction,player.transform);
             _carriedObject = null;

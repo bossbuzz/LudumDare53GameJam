@@ -1,9 +1,11 @@
-﻿using UnityEngine;
+﻿using Script.Managers;
+using UnityEngine;
 
 namespace Script.Player_
 {
     public class InputManager
     {
+        private readonly bool _ignorePause = false;
         private KeyCode KeyUp => KeyCode.UpArrow;
         private KeyCode KeyDown => KeyCode.DownArrow;
         private KeyCode KeyLeft => KeyCode.LeftArrow;
@@ -15,6 +17,7 @@ namespace Script.Player_
         
         public Vector2 DirectionalInput()
         {
+            if (TimeManager.IsPaused && !_ignorePause) return Vector2.zero;
             Vector2 vector = new Vector2();
             if (Input.GetKey(KeyUp)) vector.y = 1;
             if (Input.GetKey(KeyDown)) vector.y = -1;
@@ -29,22 +32,27 @@ namespace Script.Player_
 
         public bool PressedJump()
         {
-            return Input.GetKeyDown(KeyJump);
+            return Input.GetKeyDown(KeyJump) && (!TimeManager.IsPaused || _ignorePause);
         }
 
         public bool PressedGrab()
         {
-            return Input.GetKeyDown(KeyGrab);
+            return Input.GetKeyDown(KeyGrab)&& (!TimeManager.IsPaused || _ignorePause);
         }
 
         public bool PressedThrow()
         {
-            return Input.GetKeyDown(KeyThrow);
+            return Input.GetKeyDown(KeyThrow)&& (!TimeManager.IsPaused || _ignorePause);
         }
 
         public bool PressedReset()
         {
-            return Input.GetKeyDown(KeyReset);
+            return Input.GetKeyDown(KeyReset)&& (!TimeManager.IsPaused || _ignorePause);
+        }
+
+        public InputManager(bool ignorePause)
+        {
+            _ignorePause = ignorePause;
         }
         
     }

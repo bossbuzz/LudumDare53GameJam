@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Script.Deliverables;
+using Script.Managers;
 using UnityEngine;
 
 namespace Script.Player_
@@ -37,7 +38,7 @@ namespace Script.Player_
         {
             if (!(pair is null))
             {
-                pair.Timer -= Time.deltaTime;
+                pair.Timer -= TimeManager.DeltaTime;
                 if (pair.Timer <= 0) pair = null;
             }
             if (!player.controller2D.IsGrounded && player.VelocityY <= 0)
@@ -50,6 +51,7 @@ namespace Script.Player_
                     if (pair is null || deliverable != pair.Deliverable)
                     {
                         player.SetState(player.JumpState);
+                        if (!player.GrabModule.IsCarryingObject) player.canDoubleJump = true;
                         deliverable.Stomp();
                     }
                 }

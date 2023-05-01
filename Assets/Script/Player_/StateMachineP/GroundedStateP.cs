@@ -7,7 +7,7 @@
         
         public override void EnterState(Player player)
         {
-            player.DoubleJumps = player.maxDoubleJumps;
+            player.canDoubleJump = true;
         }
 
         public override void OnUpdate(Player player)

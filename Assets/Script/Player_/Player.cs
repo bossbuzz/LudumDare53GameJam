@@ -8,7 +8,7 @@ namespace Script.Player_
     public class Player : MonoBehaviour , IDeliverableId
     {
         public Controller2D controller2D;
-        public readonly InputManager InputManager = new InputManager();
+        public readonly InputManager InputManager = new InputManager(false);
         public GrabModule GrabModule = new GrabModule();
         public StompModule StompModule;
         [SerializeField] private Vector2 velocity;
@@ -19,9 +19,7 @@ namespace Script.Player_
         [SerializeField] public float timeToJumpApex;
         [HideInInspector] public float minJumpVelocity;
         [SerializeField] public Vector2 topSpeed;
-        [SerializeField] public int maxDoubleJumps;
-        public bool hasInfiniteDoubleJumps;
-        private int doubleJumps;
+        public bool canDoubleJump;
         public PlayerState CurrentState;
         [HideInInspector] public Animator Animator; 
         public readonly AirborneState FallingState = new AirborneState();
@@ -29,7 +27,7 @@ namespace Script.Player_
         public readonly GroundedState GroundedState = new GroundedState();
         public readonly RunningState RunningState = new RunningState();
         public readonly DoubleJumpState DoubleJumpState = new DoubleJumpState();
-
+        
         public int Id => 0;
         
         public Vector2 Velocity
@@ -60,20 +58,15 @@ namespace Script.Player_
             }
         }
 
-        public bool CanDoubleJump => (doubleJumps > 0 || hasInfiniteDoubleJumps) && !GrabModule.IsCarryingObject;
-        public int DoubleJumps
+        public bool CanDoubleJump
         {
-            get => doubleJumps;
-            set
-            {
-                if (hasInfiniteDoubleJumps) return;
-                else doubleJumps = value;
-            }
+            get => canDoubleJump && !GrabModule.IsCarryingObject;
+            set => canDoubleJump = value;
         }
-        
+
         private void Awake()
         {
-            doubleJumps = maxDoubleJumps;
+            canDoubleJump = true;
             Animator = GetComponent<Animator>();
             controller2D = GetComponent<Controller2D>();
             StompModule = GetComponentInChildren<StompModule>();

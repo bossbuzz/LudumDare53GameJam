@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Script.Managers;
+using UnityEngine;
 
 namespace Script.Deliverables.StateMachineD
 {
@@ -35,7 +36,7 @@ namespace Script.Deliverables.StateMachineD
 
         private void ForceDecay(Deliverable deliverable)
         {
-            velocity -= deliverable.throwDecay.x * Time.deltaTime;
+            velocity -= deliverable.throwDecay.x * TimeManager.DeltaTime;
             if (velocity <= 0) velocity = 0;
             if (Mathf.Abs(deliverable.VelocityY) <= 0.01) deliverable.VelocityY = 0;
             if (deliverable.Controller2D.collisions.right || deliverable.Controller2D.collisions.left)
@@ -48,7 +49,7 @@ namespace Script.Deliverables.StateMachineD
 
         protected void GravityDecay(Deliverable deliverable,float multiplier = 1)
         {
-            float gravValue = -deliverable.throwForce.y * Time.deltaTime * multiplier;
+            float gravValue = -deliverable.throwForce.y * TimeManager.DeltaTime * multiplier;
             deliverable.VelocityY += gravValue;
         }
         

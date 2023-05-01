@@ -36,13 +36,18 @@ namespace Script.Player_.StateMachineP
         {
             if (player.controller2D.IsGrounded)
             {
-                AudioManager.PlayClip(AudioManager.LandClip);
+                Land();
                 player.SetState(player.GroundedState);
             }
             else if (player.CanDoubleJump && player.InputManager.PressedJump())
             {
                 player.SetState(player.DoubleJumpState);
             }
+        }
+
+        private void Land()
+        {
+            AudioManager.PlayClip(AudioManager.LandClip);
         }
     }
 }

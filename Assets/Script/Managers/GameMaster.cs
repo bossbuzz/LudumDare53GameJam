@@ -11,33 +11,34 @@ namespace Script.Managers
     {
         public static GameMaster gm;
         [SerializeField] private SceneAsset[] Scenes = new SceneAsset[20];
-        private InputManager _inputManager = new InputManager();
+        private InputManager _inputManager = new InputManager(true);
+        public bool dontLoadFromList;
         private int index;
 
         private void Awake()
         {
-            DontDestroyOnLoad(this);
-            gm = this;
-            index = -1;
-            SceneManager.sceneLoaded += ManageScenes;
+            if (gm is null)
+            {
+                DontDestroyOnLoad(this);
+                gm = this;
+                index = -1;
+                SceneManager.sceneLoaded += ManageScenes;
+            }
+            else Destroy(this);
         }
 
         private void Start()
         {
+            if (dontLoadFromList) return;
             LoadNextLevel();
-        }
-
-        private void Update()
-        {
-            if (_inputManager.PressedReset())
-            {
-                ReloadLevel();
-            }
         }
 
         public void FinishLevel()
         {
             LoadNextLevel();
+            TimeManager.Pause(false);
+            TimeManager.TM.ResetTimer();
+            TimeManager.TM.ShowTimer(true);
         }
         
         private void LoadNextLevel()
@@ -47,7 +48,7 @@ namespace Script.Managers
             SceneManager.LoadScene(Scenes[index].name);
         }
 
-        private void ReloadLevel()
+        public static void ReloadLevel()
         {
             Scene CurrentScene = SceneManager.GetActiveScene();
             SceneManager.UnloadSceneAsync(CurrentScene);

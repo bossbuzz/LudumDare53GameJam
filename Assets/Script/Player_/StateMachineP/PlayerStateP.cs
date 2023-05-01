@@ -1,5 +1,6 @@
 ﻿using Script.Debug;
 using Script.Deliverables;
+using Script.Managers;
 using UnityEngine;
 
 namespace Script.Player_.StateMachineP
@@ -38,7 +39,7 @@ namespace Script.Player_.StateMachineP
         
         protected void GravityMovement(Player player)
         {
-            float gravValue = player.gravity * Time.deltaTime;
+            float gravValue = player.gravity * TimeManager.DeltaTime;
             player.VelocityY += gravValue;
         }
 
@@ -50,7 +51,7 @@ namespace Script.Player_.StateMachineP
 
         protected void DoMovement(Player player)
         {
-            player.controller2D.Move(player.Velocity * Time.deltaTime,false);
+            player.controller2D.Move(player.Velocity * TimeManager.DeltaTime,false);
         }
 
         protected void DoFlip(Player player)
@@ -68,7 +69,6 @@ namespace Script.Player_.StateMachineP
         {
             if (player.InputManager.PressedThrow())
             {
-                player.Animator.SetTrigger("throw");
                 player.GrabModule.Throw(player.InputManager.DirectionalInput());
             }
         }

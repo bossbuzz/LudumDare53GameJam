@@ -30,7 +30,7 @@ namespace Script.Debug
 
         public static void DisplayState(PlayerState state)
         {
-            Singleton.playerStateDisplay.text = state.Name;
+            
         }
         
     }

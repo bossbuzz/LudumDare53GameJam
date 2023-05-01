@@ -12,21 +12,20 @@ namespace Script.Managers
         [SerializeField] private AudioClip bounceClip;
         private static AudioManager currentManager;
         
-        public static AudioClip FlapClip => currentManager.flapClip;
-        public static AudioClip LandClip => currentManager.landClip;
-        public static AudioClip BounceClip => currentManager.bounceClip;
+        public static AudioClip FlapClip => AM.flapClip;
+        public static AudioClip LandClip => AM.landClip;
+        public static AudioClip BounceClip => AM.bounceClip;
         private void Awake()
         {
             AudioSource[] sources = GetComponentsInChildren<AudioSource>();
             _audioSources = new Queue<AudioSource>(sources);
-            if (currentManager is null)
+            if (currentManager is null || currentManager)
             {
-                DontDestroyOnLoad(this);
                 currentManager = this;
             }
             else Destroy(this);
         }
-
+        
         public static AudioManager AM
         {
             get
@@ -37,6 +36,11 @@ namespace Script.Managers
                 }
                 return currentManager;
             }
+        }
+
+        private void OnDestroy()
+        {
+            currentManager = null;
         }
 
         public static void PlayClip(AudioClip clip)
