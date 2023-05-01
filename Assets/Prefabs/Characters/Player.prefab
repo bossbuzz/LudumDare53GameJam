@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 870400265693194991}
   - component: {fileID: 870400265693194979}
   - component: {fileID: 870400265693194980}
+  - component: {fileID: 5811521114542381801}
   m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
@@ -62,7 +63,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2, y: 2}
   m_EdgeRadius: 0
 --- !u!114 &870400265693194979
 MonoBehaviour:
@@ -129,6 +130,26 @@ MonoBehaviour:
   topSpeed: {x: 20, y: 20}
   maxDoubleJumps: 1
   hasInfiniteDoubleJumps: 1
+--- !u!95 &5811521114542381801
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 870400265693194990}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 33f5a5cc9f3bc81429645af567f919b3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &870400265751163516
 GameObject:
   m_ObjectHideFlags: 0
@@ -200,9 +221,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 918050237
-  m_SortingLayer: 1
+  m_SortingLayer: 3
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: b281b91a70a624a0da1c43adc1c30c7b, type: 3}
+  m_Sprite: {fileID: 2061756839, guid: 3869fdbba44f8f340913872a446e8584, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -439,7 +460,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 870400266653186397}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.3, y: 0.5, z: 0}
+  m_LocalPosition: {x: 0.25, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -470,7 +491,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.6, y: 1.8}
+  m_Size: {x: 2.5, y: 3}
   m_EdgeRadius: 0
 --- !u!1 &870400267287414994
 GameObject:
