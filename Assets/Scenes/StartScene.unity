@@ -180,7 +180,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8907899352491161910, guid: a8423d5b87ca00c45994798165961428, type: 3}
       propertyPath: dontLoadFromList
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8907899352491161910, guid: a8423d5b87ca00c45994798165961428, type: 3}
       propertyPath: Scenes.Array.size
