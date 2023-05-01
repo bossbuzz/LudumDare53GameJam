@@ -48,7 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Receptor: {fileID: 4429738892828746927}
   platform: {fileID: 8186512843327452711}
-  speed: 4
+  speed: 5
 --- !u!1 &4429738892361756650
 GameObject:
   m_ObjectHideFlags: 0

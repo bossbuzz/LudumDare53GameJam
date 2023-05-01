@@ -22660,6 +22660,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 8168386751532505218, guid: b24480a953c667c41a1f5ecf3b9257b8, type: 3}
+      propertyPath: speed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8168386751532505218, guid: b24480a953c667c41a1f5ecf3b9257b8, type: 3}
+      propertyPath: waitTime
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8168386751532505218, guid: b24480a953c667c41a1f5ecf3b9257b8, type: 3}
       propertyPath: localWaypoints.Array.data[1].y
       value: 10
       objectReference: {fileID: 0}
@@ -37019,7 +37027,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 0
-      m_TileSpriteIndex: 2
+      m_TileSpriteIndex: 3
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -37739,7 +37747,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 0
-      m_TileSpriteIndex: 1
+      m_TileSpriteIndex: 2
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -38564,12 +38572,12 @@ Tilemap:
   m_TileSpriteArray:
   - m_RefCount: 0
     m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: 21300078, guid: 4870201d3e7f678cae66676cb6d32be3, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 21300168, guid: 4870201d3e7f678cae66676cb6d32be3, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: 21300196, guid: 4870201d3e7f678cae66676cb6d32be3, type: 3}
   - m_RefCount: 1
