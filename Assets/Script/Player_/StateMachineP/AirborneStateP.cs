@@ -1,4 +1,6 @@
-﻿namespace Script.Player_.StateMachineP
+﻿using Script.Managers;
+
+namespace Script.Player_.StateMachineP
 {
     public class AirborneState : PlayerState
     {
@@ -34,6 +36,7 @@
         {
             if (player.controller2D.IsGrounded)
             {
+                AudioManager.PlayClip(AudioManager.LandClip);
                 player.SetState(player.GroundedState);
             }
             else if (player.CanDoubleJump && player.InputManager.PressedJump())

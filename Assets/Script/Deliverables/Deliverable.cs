@@ -1,5 +1,6 @@
 ﻿using System;
 using Script.Deliverables.StateMachineD;
+using Script.Managers;
 using UnityEngine;
 
 namespace Script.Deliverables
@@ -129,6 +130,7 @@ namespace Script.Deliverables
 
         public void Stomp()
         {
+            AudioManager.PlayClip(AudioManager.BounceClip);
             VelocityY = -Mathf.Abs(VelocityY);
         }
     }
