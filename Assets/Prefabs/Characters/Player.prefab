@@ -121,7 +121,7 @@ MonoBehaviour:
     throwStompTimer: 1.2
   StompModule: {fileID: 0}
   velocity: {x: 0, y: 0}
-  speed: 10
+  speed: 15
   gravity: 0
   maxJumpHeight: 3
   minJumpHeight: 3
