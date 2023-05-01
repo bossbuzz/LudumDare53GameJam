@@ -100,8 +100,8 @@ MonoBehaviour:
   Collider2D: {fileID: 0}
   velocity: {x: 0, y: 0}
   topSpeed: {x: 30, y: 30}
-  throwForce: {x: 25, y: 20}
-  throwDecay: {x: 25, y: 10}
+  throwForce: {x: 30, y: 20}
+  throwDecay: {x: 45, y: 10}
   bounceDecay: {x: 2, y: 2}
   spawnOnGround: 1
 --- !u!1 &7089917198893779148
@@ -175,7 +175,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 918050237
-  m_SortingLayer: 1
+  m_SortingLayer: 3
   m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: b281b91a70a624a0da1c43adc1c30c7b, type: 3}
   m_Color: {r: 0.032075405, g: 0.3687826, b: 1, a: 1}
