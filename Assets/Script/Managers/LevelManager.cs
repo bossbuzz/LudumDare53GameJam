@@ -29,12 +29,12 @@ namespace Script.Managers
             }
             foreach (var receptor in _receptors)
             {
-                if (!receptor._complete) return;
-                TimeManager.Pause(true);
-                TimeManager.TM.ShowTimer(false);
-                _victoryScreen.SetActive(true);
-                enabled = false;
+                if (!receptor.Complete) return;
             }
+            TimeManager.Pause(true);
+            TimeManager.TM.ShowTimer(false);
+            _victoryScreen.SetActive(true);
+            enabled = false;
             
         }
     }

@@ -8,6 +8,7 @@ namespace Script.Deliverables
     public class Deliverable : MonoBehaviour,IDeliverableId
     {
         [SerializeField] private int _id;
+        public Sprite sprite;
         public Controller2D Controller2D;
         public Collider2D Collider2D;
         public Vector2 velocity;
@@ -21,10 +22,12 @@ namespace Script.Deliverables
         public readonly PickupStateD PickupStateD = new PickupStateD();
         public readonly ThrowingStateD ThrowingStateD = new ThrowingStateD();
         public bool spawnOnGround = false;
+        private int currentHealth;
         public int health;
         public int crackDamage;
         public float crackVelocity;
         [HideInInspector] public bool cantCrack;
+        public SpriteRenderer Renderer;
         public delegate void dvoid();
         public event dvoid onBounce;
         public event dvoid onDestory;
@@ -67,6 +70,7 @@ namespace Script.Deliverables
 
         private void Start()
         {
+            currentHealth = health;
             useTopSpeed = topSpeed;
             if (spawnOnGround)
             {
@@ -155,8 +159,11 @@ namespace Script.Deliverables
         {
             cantCrack = true;
             AudioManager.PlayClip(AudioManager.CrackClip);
-            health -= crackDamage;
-            if(health <= 0) DestroyDeliverable();
+            currentHealth -= crackDamage;
+            float t = (float) currentHealth / health;
+            float val = Mathf.Lerp(0,1,t);
+            Renderer.color = new Color(1, val, val,1);
+            if(currentHealth <= 0) DestroyDeliverable();
         }
 
         private void DestroyDeliverable()

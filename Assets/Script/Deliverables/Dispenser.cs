@@ -8,7 +8,7 @@ namespace Script.Deliverables
     {
         [SerializeField] private GameObject deliverable;
         private Deliverable activeObject;
-        private Transform spawnPivot;
+        [SerializeField] private Transform spawnPivot;
         private void Start()
         {
             if (activeObject is null)

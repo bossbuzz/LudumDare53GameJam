@@ -12,7 +12,7 @@ namespace Script.Physics2D
 
         private void Update()
         {
-            if (Receptor._complete)
+            if (Receptor.Complete)
             {
                 platform.speed = speed;
             }
