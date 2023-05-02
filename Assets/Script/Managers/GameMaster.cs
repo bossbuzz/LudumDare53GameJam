@@ -10,7 +10,7 @@ namespace Script.Managers
     public class GameMaster : MonoBehaviour
     {
         public static GameMaster gm;
-        [SerializeField] private SceneAsset[] Scenes = new SceneAsset[20];
+        [SerializeField] private string[] SceneNames = new string[20];
         private InputManager _inputManager = new InputManager(true);
         public bool dontLoadFromList;
         private int index;
@@ -39,7 +39,7 @@ namespace Script.Managers
         {
             index++;
             SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
-            SceneManager.LoadScene(Scenes[index].name);
+            SceneManager.LoadScene(SceneNames[index]);
         }
 
         public static void ReloadLevel()
