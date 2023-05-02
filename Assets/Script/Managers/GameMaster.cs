@@ -26,13 +26,7 @@ namespace Script.Managers
             }
             else Destroy(this);
         }
-
-        private void Start()
-        {
-            if (dontLoadFromList) return;
-            LoadNextLevel();
-        }
-
+        
         public void FinishLevel()
         {
             LoadNextLevel();
@@ -53,7 +47,9 @@ namespace Script.Managers
             Scene CurrentScene = SceneManager.GetActiveScene();
             SceneManager.UnloadSceneAsync(CurrentScene);
             SceneManager.LoadScene(CurrentScene.name);
+            TimeManager.Pause(false);
             TimeManager.TM.ResetTimer();
+            TimeManager.TM.ShowTimer(true);
         }
         
         private void ManageScenes(Scene s, LoadSceneMode mode)

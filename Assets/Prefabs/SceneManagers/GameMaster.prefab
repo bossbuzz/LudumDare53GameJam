@@ -196,6 +196,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: f64eb3b79a6782043869603983c6f09d, type: 3}
     - target: {fileID: 3926958126860005254, guid: 514f4a394eb896241ac14f8d5c003a1f, type: 3}
+      propertyPath: levelMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 5d2b111846b18624bb5a853f2876cbaf, type: 3}
+    - target: {fileID: 3926958126860005254, guid: 514f4a394eb896241ac14f8d5c003a1f, type: 3}
+      propertyPath: titleMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 4d28b524704f4844bb49b0c5cb17d76a, type: 3}
+    - target: {fileID: 3926958126860005254, guid: 514f4a394eb896241ac14f8d5c003a1f, type: 3}
       propertyPath: finishLevelClip
       value: 
       objectReference: {fileID: 8300000, guid: 0fd97a0745cff4feda4e1927ec44244a, type: 3}

@@ -36,7 +36,7 @@ namespace Script.Player_
 
         private void Update()
         {
-            if (!(pair is null))
+            /*if (!(pair is null))
             {
                 pair.Timer -= TimeManager.DeltaTime;
                 if (pair.Timer <= 0) pair = null;
@@ -55,7 +55,7 @@ namespace Script.Player_
                         deliverable.Stomp();
                     }
                 }
-            }
+            }*/
         }
 
 

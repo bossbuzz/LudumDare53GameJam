@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Script.Managers
@@ -7,7 +8,7 @@ namespace Script.Managers
     public class AudioManager : MonoBehaviour
     {
         private Queue<AudioSource> _audioSources;
-        private AudioSource _musicSource;
+        [SerializeField] private AudioSource _musicSource;
         [SerializeField] private AudioClip flapClip;
         [SerializeField] private AudioClip landClip;
         [SerializeField] private AudioClip bounceClip;
@@ -27,12 +28,14 @@ namespace Script.Managers
         public static AudioClip CrackClip => AM.crackClip;
         public static AudioClip FinishLevelClip => AM.finishLevelClip;
         public static AudioClip LevelMusic => AM.levelMusic;
-        private static AudioClip TitleMusic => AM.titleMusic;
+        public static AudioClip TitleMusic => AM.titleMusic;
         
         private void Awake()
         {
             AudioSource[] sources = GetComponentsInChildren<AudioSource>();
-            _audioSources = new Queue<AudioSource>(sources);
+            List<AudioSource> slist = sources.ToList();
+            slist.Remove(_musicSource);
+            _audioSources = new Queue<AudioSource>(slist);
             if (currentManager is null || currentManager)
             {
                 currentManager = this;
@@ -62,6 +65,17 @@ namespace Script.Managers
             AM.PlayAudioClip(clip,volume,pitch);
         }
 
+        public static void PlaySong(AudioClip clip)
+        {
+            AM.PlaySongg(clip);
+        }
+
+        private void PlaySongg(AudioClip clip)
+        {
+            _musicSource.clip = clip;
+            _musicSource.Play();
+        }
+        
         private void PlayAudioClip(AudioClip clip,float volume = 1,float pitch = 1)
         {
             AudioSource nextSource = _audioSources.Dequeue();

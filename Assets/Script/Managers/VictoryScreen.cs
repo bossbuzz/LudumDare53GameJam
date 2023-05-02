@@ -49,7 +49,11 @@ namespace Script.Managers
             if (_onGoingTime >= _maxTime)
             {
                 _onGoingTime = _maxTime;
-                if (_inputManager.PressedJump())
+                if (_inputManager.PressedReset())
+                {
+                    GameMaster.ReloadLevel();
+                }
+                else if (_inputManager.PressedJump())
                 {
                     GameMaster.gm.FinishLevel();
                 }
